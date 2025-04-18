@@ -1,0 +1,48 @@
+[project]
+name = "2025-04-12-minnesota-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.72.0",
+]
+
+[tool.poetry]
+name = "promptsculptor-api"
+version = "0.1.0"
+description = "API for analyzing, remixing, and creating AI prompts."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+fastapi = "^0.111.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+sqlmodel = "^0.0.18"
+pydantic = "^2.7.1"
+pydantic-settings = "^2.2.1"
+python-dotenv = "^1.0.1"
+httpx = "^0.27.0"
+aiosqlite = "^0.20.0"
+openai = "^1.30.1"
+
+# Add development dependencies group
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-asyncio = "^0.23.7"
+respx = "^0.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Add pytest configuration (optional, can also be in pytest.ini or pyproject.toml)
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = [
+  "."
+]

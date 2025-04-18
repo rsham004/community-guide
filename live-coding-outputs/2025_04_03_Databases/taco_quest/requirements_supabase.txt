@@ -1,0 +1,2 @@
+# Supabase requirements
+supabase==1.0.3

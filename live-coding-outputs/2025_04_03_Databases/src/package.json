@@ -1,0 +1,29 @@
+{
+  "name": "taco-quest-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "@supabase/supabase-js": "^2.49.4",
+    "date-fns": "^3.3.1",
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swr": "^2.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "prisma": "^5.10.2"
+  }
+}

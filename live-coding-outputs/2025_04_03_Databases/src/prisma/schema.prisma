@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int              @id @default(autoincrement())
+  username        String           @unique
+  email           String           @unique
+  createdAt       DateTime         @default(now()) @map("created_at")
+  reviews         Review[]
+  achievements    UserAchievement[]
+  following       Follow[]         @relation("UserFollowing")
+  followers       Follow[]         @relation("UserFollowers")
+
+  @@map("user")
+}
+
+model Location {
+  id        Int     @id @default(autoincrement())
+  name      String
+  address   String
+  lat       Float
+  lon       Float
+  tacos     Taco[]
+
+  @@map("location")
+}
+
+model Taco {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  locationId  Int       @map("location_id")
+  location    Location  @relation(fields: [locationId], references: [id])
+  reviews     Review[]
+
+  @@map("taco")
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  tacoId    Int      @map("taco_id")
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user      User     @relation(fields: [userId], references: [id])
+  taco      Taco     @relation(fields: [tacoId], references: [id])
+
+  @@map("review")
+}
+
+model Follow {
+  id           Int      @id @default(autoincrement())
+  followerId   Int      @map("follower_id")
+  followingId  Int      @map("following_id")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  follower     User     @relation("UserFollowing", fields: [followerId], references: [id])
+  following    User     @relation("UserFollowers", fields: [followingId], references: [id])
+
+  @@map("follow")
+}
+
+model Achievement {
+  id          Int               @id @default(autoincrement())
+  name        String
+  description String
+  users       UserAchievement[]
+
+  @@map("achievement")
+}
+
+model UserAchievement {
+  id             Int         @id @default(autoincrement())
+  userId         Int         @map("user_id")
+  achievementId  Int         @map("achievement_id")
+  earnedAt       DateTime    @default(now()) @map("earned_at")
+
+  user           User        @relation(fields: [userId], references: [id])
+  achievement    Achievement @relation(fields: [achievementId], references: [id])
+
+  @@map("userachievement")
+}
