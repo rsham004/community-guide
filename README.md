@@ -20,6 +20,7 @@ Our goal is to **collaboratively build a practical knowledge base** that helps p
 *   [Live Coding Outputs](./live-coding-outputs/) - Outputs from live coding sessions.
 *   [Session Notes](./session-notes/) - Notes from project sessions.
 *   [Tools & Resources](./topics/resources.md) - Curated list of tools, datasets, and references.
+*   [AI Agent Prompts](./prompts/) - Prompts used for generating project artifacts.
 
 ## 📚 How to Use This Repo
 
@@ -70,7 +71,6 @@ You are free to:
 - **NonCommercial** — You may not use the material for commercial purposes.
 
 💡 *Commercial use of this content is reserved. If you're interested in licensing or collaborating, [contact us](mailto:dave.braendler@productfoundry.ai).*
-
 
 ---
 
