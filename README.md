@@ -41,7 +41,7 @@ You can read files directly in GitHub, or clone the repo and open it in VS Code 
 4. Commit and push your changes
 5. **Create a pull request** with a short description of what you added or changed
 
-📌 Check out [`CONTRIBUTING.md`](./CONTRIBUTING.md) for formatting and tone guidelines.
+📌 Check out [`CONTRIBUTIING.md`](./CONTRIBUTIING.md) for formatting and tone guidelines.
 
 ---
 
