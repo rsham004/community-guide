@@ -63,3 +63,7 @@
     *   Highlight areas where `async`/`await` will be used, noting considerations for **SQLite's blocking nature** and potential use of async drivers.
 
 **Output Format:** Use clear and concise markdown. Be specific and provide enough detail for another developer to implement the **FastAPI/SQLModel/SQLite prototype** based on this specification.
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

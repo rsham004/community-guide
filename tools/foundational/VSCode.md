@@ -59,34 +59,58 @@ code my-folder/
 
 ## 🛠️ 4. Setup for AI Projects
 
-1. Create your project folder
-2. Open it in VS Code:
+1. Create your project folder locally, or clone an existing one using Git.
+   *(If you haven't installed Git, see the [Git Installation Guide](../foundational_dev/Git-for-windows.md))*
+2. Open the folder in VS Code:
    ```bash
-   code my-ai-project
+   code path/to/your-project
    ```
-3. Create a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Windows: .venv\Scripts\activate
-   ```
-4. Open the command palette `Ctrl+Shift+P` → **“Python: Select Interpreter”**  
-   Pick the `.venv` version for your project.
+3. Create and activate a Python virtual environment.
+   *   **Using Python's built-in `venv`:**
+       ```bash
+       # In the VS Code terminal
+       python -m venv .venv
+       # Activate (Windows PowerShell):
+       .venv\Scripts\Activate.ps1
+       # Activate (macOS/Linux bash):
+       source .venv/bin/activate
+       ```
+   *   **Using `uv` (Recommended):** If you followed the [uv Setup Guide](../foundational_dev/UV.md), you can initialize your project and environment with:
+       ```bash
+       # In the VS Code terminal (after installing uv)
+       uv init
+       # Or sync an existing uv project:
+       uv sync
+       # uv automatically manages the .venv folder
+       ```
+4. Open the command palette `Ctrl+Shift+P` (`Cmd+Shift+P` on Mac) → **“Python: Select Interpreter”**
+   Choose the Python interpreter located inside your project's `.venv` folder.
 
 ---
 
 ## 📦 5. Install Common AI Packages
 
-Inside your virtual environment:
+Inside your activated virtual environment:
 
-```bash
-pip install openai langchain transformers pandas fastapi
-```
+*   **Using `pip` (if using `venv`):**
+    ```bash
+    pip install openai langchain transformers pandas fastapi
+    ```
+*   **Using `uv` (Recommended):**
+    ```bash
+    uv add openai langchain transformers pandas fastapi
+    ```
 
-Optionally:
+Optionally install data science / notebook tools:
 
-```bash
-pip install jupyter matplotlib seaborn scikit-learn
-```
+*   **Using `pip`:**
+    ```bash
+    pip install jupyter matplotlib seaborn scikit-learn
+    ```
+*   **Using `uv`:**
+    ```bash
+    uv add jupyter matplotlib seaborn scikit-learn
+    ```
 
 ---
 
@@ -117,3 +141,7 @@ You now have:
 ---
 
 Happy building! 💡 Want a `.code-workspace` template to get started? Let me know.
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

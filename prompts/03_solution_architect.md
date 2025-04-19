@@ -49,3 +49,7 @@
     *   Brief description of CI/CD approach.
 
 **Output Format:** Use clear and concise markdown. Diagrams (e.g., using Mermaid.js) are encouraged for illustrating architecture components and flows. Ensure the document is structured logically for easy consumption by developers and other LLMs.
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

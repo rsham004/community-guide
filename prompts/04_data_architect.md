@@ -48,3 +48,7 @@
     *   Note considerations for future scaling or migration from SQLite.
 
 **Output Format:** Use clear and concise markdown. Ensure code blocks for SQLModel and Prisma are correctly formatted. Prioritize clarity for the **SQLModel/SQLite** implementation.
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

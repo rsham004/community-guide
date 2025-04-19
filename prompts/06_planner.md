@@ -4,7 +4,7 @@
 
 **Goal:** Generate a clear, actionable `Plan.md` file in markdown format that outlines the development tasks, broken down into logical phases.
 
-**Inputs:** Design documents located in the `c:\repos\AI_Product_Dev\live-demos\2025_04_12_Minnesota_API\design_docs\` directory, which should include outputs derived from:
+**Inputs:** Design documents located in the <Your Working Directory>, which will most likely  include outputs derived from:
 *   `product_requirements.md` (or equivalent PRD)
 *   `solution_architect.md` (Architecture Guide)
 *   `data_architect.md` (Database Design)
@@ -39,4 +39,8 @@
 - [ ] Implement initial Alembic setup for migrations (optional for prototype, but good practice) (Medium)
 ```
 
-**Ensure:** The plan is concise, task-oriented, and directly reflects the requirements outlined in the input design documents, focusing on the **initial SQLite/SQLModel prototype**.
+**Ensure:** The plan is concise, task-oriented, and directly reflects the requirements outlined in the input design documents, focusing on building an MVP
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

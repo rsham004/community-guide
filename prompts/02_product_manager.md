@@ -13,3 +13,7 @@ Who is this app for
 Functional Requirements - What does it do
 User Stories - How will the user interact
 User Interface - How will the app look
+
+---
+*Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
+*Visit [ProductFoundry.ai](https://productfoundry.ai)*

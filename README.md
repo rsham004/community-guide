@@ -15,19 +15,14 @@ Our goal is to **collaboratively build a practical knowledge base** that helps p
 
 ---
 
-## Project Resources
-
-*   [Live Coding Outputs](./live-coding-outputs/) - Outputs from live coding sessions.
-*   [Session Notes](./session-notes/) - Notes from project sessions.
-*   [Tools & Resources](./topics/resources.md) - Curated list of tools, datasets, and references.
-*   [AI Agent Prompts](./prompts/) - Prompts used for generating project artifacts.
-
 ## 📚 How to Use This Repo
 
-This repository is organized into markdown-based notes inside the `/topics` folder. Browse the guides to explore workflows, learn concepts, or contribute your own!
+This repository contains various learning resources:
 
-- [`topics/`](./topics/) — Where all community-contributed guides live.
-- [`tools/`](./tools/) — Setup guides for essential development tools.
+- [`live-coding-outputs/`](./live-coding-outputs/) - Code and artifacts generated during live sessions.
+- [`session-notes/`](./session-notes/) - Detailed notes and guides on specific topics discussed during sessions (e.g., MCP, Databases).
+- [`tools/`](./tools/) - Setup guides and documentation for essential development tools, organized into subdirectories (foundational, infrastructure, etc.). Start with the [Tools Index](./tools/index.md).
+- [`prompts/`](./prompts/) - A collection of prompts designed for different AI agent roles.
 
 You can read files directly in GitHub, or clone the repo and open it in VS Code or Obsidian for a better note-taking experience.
 
@@ -37,7 +32,7 @@ You can read files directly in GitHub, or clone the repo and open it in VS Code 
 
 1. **Fork** this repository
 2. Create a new branch: `git checkout -b my-topic-contribution`
-3. Add or update files in `topics/`
+3. Add or update files (e.g., in `session-notes/`, `tools/`, `prompts/`)
 4. Commit and push your changes
 5. **Create a pull request** with a short description of what you added or changed
 
