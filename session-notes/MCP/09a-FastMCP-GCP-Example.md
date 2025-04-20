@@ -7,7 +7,7 @@ This guide walks you through building a **production-ready MCP server** that sup
 ## 📦 Overview: What You'll Build
 
 - A [Python](../../tools/foundational/Python.md)-based **MCP server** that exposes tools to an AI agent (e.g., Gemini).
-- Uses **Server-Sent Events (SSE)** (see [02-SSE.md](./02-SSE.md) for details) for real-time streaming between server and client.
+- Uses **Server-Sent Events (SSE)** (see [02-Transport-Mechanisms.md](./02-Transport-Mechanisms.md) for details) for real-time streaming between server and client.
 - Hosted on **Google Cloud Run** with a public HTTP endpoint.
 - A **client** that connects via SSE, interacts with the server, and uses Gemini to process requests.
 
@@ -19,7 +19,7 @@ This guide walks you through building a **production-ready MCP server** that sup
 |----------|------------------|---------------------|
 | Web Server | `uvicorn` (ASGI) | - |
 | Framework | `Starlette` | - |
-| Protocol | `SSE` (Server-Sent Events) | [02-SSE.md](./02-SSE.md) |
+| Protocol | `SSE` (Server-Sent Events) | [02-Transport-Mechanisms.md](./02-Transport-Mechanisms.md) |
 | AI Model | `Gemini` (via Google GenAI SDK) | - |
 | Containerization | `Docker` | [Docker](../../tools/infrastructure/Docker.md) |
 | Deployment | `Google Cloud Run` | - |

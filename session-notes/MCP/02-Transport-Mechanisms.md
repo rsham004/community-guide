@@ -1,3 +1,32 @@
+# Transport Mechanisms in MCP: SSE vs STDIO
+
+At a glance:
+
+| Transport | Best For                | Directionality        | Network Support        | Typical Use Case                               |
+| :-------- | :---------------------- | :-------------------- | :--------------------- | :--------------------------------------------- |
+| **STDIO** | Local, CLI-based setups | Bidirectional (local) | ❌ Local machine only | Development, testing, local tools              |
+| **SSE**   | Distributed web systems | Server ➜ Client only | ✅ Remote via HTTP    | Production servers, SaaS, remote agents        |
+
+MCP Supports Two Main Transport Mechanisms:
+
+### 1. STDIO (Standard IO)
+- ✅ Simple to set up — no networking needed
+- 🖥️ Works when server and client are on the same machine
+- 📥📤 Communicates over standard input/output streams
+- 🧪 Ideal for local development or one-off experiments
+
+### 2. SSE (Server-Sent Events)
+- 🌐 Uses HTTP + SSE for client-server communication
+- 📡 Suitable for remote and distributed systems
+- 🔄 Automatically reconnects on drop, works with firewalls
+- 🚀 Ideal for scalable, production-grade deployments
+
+**🚦 When to Use Each:**
+- Use **STDIO** for fast prototyping or when the tool only runs locally.
+- Use **SSE** when you’re building remote-accessible or web-hosted MCP servers.
+
+---
+
 # Understanding Server-Sent Events (SSE) in MCP
 
 ## What is SSE?
@@ -66,7 +95,7 @@ This aligns well with use cases like AI agents invoking tools, data scraping, or
 
 By using SSE, you can build scalable, responsive, and production-ready MCP servers that support powerful AI-driven workflows.
 
-See examples of SSE implementation in the n8n native nodes ([04-N8N-ServerNode.md](./04-N8N-ServerNode.md)) and the custom Python server ([05-BuildingMCP.md](./05-BuildingMCP.md)).
+See examples of SSE implementation in the n8n native nodes ([04-N8N-ServerNode.md](./04-N8N-ServerNode.md)) and the custom Python server example ([09-FastMCP-GCP-Example.md](./09-FastMCP-GCP-Example.md)).
 
 ---
 *Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*

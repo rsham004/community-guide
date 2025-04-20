@@ -13,6 +13,9 @@ With MCP:
 - LLMs can **interact with services more meaningfully**.
 - Developers can build richer assistants without gluing everything manually.
 
+### History and Adoption
+MCP was introduced by Anthropic in late 2024. While initially slow to gain traction, interest surged in early 2025 as more companies and developers recognized its potential for standardizing tool integration. Major players like OpenAI began supporting it, leading to rapid ecosystem growth. It's often compared to HTTP in its potential impact on standardizing interactions, but for AI tools.
+
 ---
 
 ## 🧰 The Problem MCP Solves
@@ -36,7 +39,7 @@ LLMs like ChatGPT or Claude are great at **text prediction**, but they can't:
 |----------|------|-------------|----------|
 | **MCP Client** | Interface | The LLM-facing agent or application that initiates requests. | Claude Desktop, Cursor IDE, Custom Scripts |
 | **MCP Protocol** | Bridge | Defines how clients and servers communicate (often JSON over HTTP/SSE/STDIO). | - |
-| **MCP Server** | Translator | Receives client requests, invokes the correct tool, and returns results. | Self-hosted n8n ([03](./03-N8N-selfhost+mcp.md)/[04](./04-N8N-ServerNode.md)), Custom Python Server ([05](./05-BuildingMCP.md)) |
+| **MCP Server** | Translator | Receives client requests, invokes the correct tool, and returns results. | Self-hosted n8n ([03](./03-N8N-selfhost+mcp.md)/[04](./04-N8N-ServerNode.md)), Custom Python Server ([09-FastMCP-GCP-Example.md](./09-FastMCP-GCP-Example.md)) |
 | **Service/Tool** | Functionality | The actual external capability being exposed (e.g., sending email, querying a database). | Gmail API, Database Query, Web Search |
 
 
@@ -45,6 +48,11 @@ LLMs like ChatGPT or Claude are great at **text prediction**, but they can't:
 ## 🧠 How It Works
 
 > Think of MCP as a **universal translator** between LLMs and external services.
+
+### Transport Mechanisms: STDIO vs. SSE
+MCP servers and clients can communicate in different ways:
+- **STDIO (Standard Input/Output):** Communication happens via the standard input/output streams. This is simple for local development where the client and server run on the same machine, often managed by a single process or script.
+- **SSE (Server-Sent Events):** Communication uses standard HTTP(S). The server pushes updates to the client over a persistent connection. This is ideal for production, networked environments where the server might run remotely. See [02-Transport-Mechanisms.md](./02-Transport-Mechanisms.md) for more details.
 
 ### Without MCP:
 > Each tool requires custom integration logic, error handling, glue code, and manual configuration.
@@ -106,8 +114,9 @@ Stay tuned. The ecosystem is just getting started. 🚀
 ## 📚 Implementation Examples
 
 See the following notes for practical guides:
+- **Using the Python SDK (`mcp-cli`):** [05-Python-SDK-Implementation.md](./05-Python-SDK-Implementation.md) and [06-Integrating-MCP-with-LLMs.md](./06-Integrating-MCP-with-LLMs.md)
 - **Using n8n:** [03-N8N-selfhost+mcp.md](./03-N8N-selfhost+mcp.md) and [04-N8N-ServerNode.md](./04-N8N-ServerNode.md)
-- **Building a Custom Python Server:** [05-BuildingMCP.md](./05-BuildingMCP.md)
+- **Building a Custom Python Server (FastMCP/GCP Example):** [09-FastMCP-GCP-Example.md](./09-FastMCP-GCP-Example.md)
 
 ---
 *Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)*
