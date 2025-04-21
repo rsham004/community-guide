@@ -1,5 +1,8 @@
 # Upcoming Community Events
 
+![AI Product Foundary](./../assets/ProductFoundry_Events.png)
+
+
 | Region         | Meetup Group Link                                                               | View Events in this Document |
 | -------------- | ------------------------------------------------------------------------------- | ---------------------------- |
 | New Zealand    | [AI Driven Coding (Auckland)](https://www.meetup.com/ai-driven-coding/)         | [Pacific/Auckland Events](#pacificauckland) |
