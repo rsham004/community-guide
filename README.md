@@ -21,6 +21,7 @@ This repository contains various learning resources:
 
 - [`live-coding-outputs/`](./live-coding-outputs/) - Code and artifacts generated during live sessions.
 - [`session-notes/`](./session-notes/) - Detailed notes and guides on specific topics discussed during sessions (e.g., MCP, Databases).
+- [`events/`](./events/) - Overview of upcoming community events. See the [Events Overview](./events/events_overview.md).
 - [`tools/`](./tools/) - Setup guides and documentation for essential development tools, organized into subdirectories (foundational, infrastructure, etc.). Start with the [Tools Index](./tools/index.md).
 - [`prompts/`](./prompts/) - A collection of prompts designed for different AI agent roles.
 

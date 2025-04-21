@@ -1,10 +1,18 @@
-import sys
 import asyncio
+import sys
+
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
+
 async def main(a, b):
     # Since the server is already running, we don’t spawn a new process
+    server_params = StdioServerParameters(
+        command=sys.executable,  # Use the current Python interpreter
+        args=["server.py"],       # Run the server script
+    )
+
+    # Start the server process
     server_params = StdioServerParameters(
         command=sys.executable,  # Use the current Python interpreter
         args=["server.py"],      # Run the server script
