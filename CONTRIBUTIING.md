@@ -52,6 +52,15 @@ Open an [Issue](https://github.com/AI-Product-Development/community-guide/issues
 
 ---
 
+## 🤝 Other Ways to Contribute
+
+Not ready to write content yet? You can still help!
+- **Volunteer your expertise:** If you have experience in specific areas of AI product development and want to help review content or mentor others, please sign up using [this form](https://airtable.com/appydKBEzaiAhYdQY/shr0aiUp30I6OZP4d).
+- **Provide feedback:** Open an issue to give feedback on existing topics or the guide structure.
+- **Spread the word:** Share this guide with others who might find it useful.
+
+---
+
 ## 🔐 License & Use
 
 By contributing, you agree that your contributions will be licensed under the  
