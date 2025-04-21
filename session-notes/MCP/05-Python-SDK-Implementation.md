@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
 ---
 
-## 🔍 Inspecting Your Server (`mcp devaf`)
+## 🔍 Inspecting Your Server (`mcp dev`)
 
 The `mcp-cli` package provides the MCP Inspector, a development tool to test your running server locally.
 
@@ -86,17 +86,17 @@ The `mcp-cli` package provides the MCP Inspector, a development tool to test you
     ```bash
     cd path/to/your/server/directory
     ```
-2.  **Run the Inspector:** Execute the `mcp devaf` command, pointing it to your server script. This command runs your server script in a special development mode that connects it to the inspector.
+2.  **Run the Inspector:** Execute the `mcp dev` command, pointing it to your server script. This command runs your server script in a special development mode that connects it to the inspector.
     ```bash
-    mcp devaf server.py
+    mcp dev server.py
     ```
 3.  **Download Prompt (First Run):** If it's your first time running the inspector, it will prompt you to download the necessary UI components. Type `Y` and press Enter.
     ```
     Do you want to download the MCP Inspector? [Y/n] Y
     ```
-4.  **Access UI:** Once the server is running under `mcp devaf`, it will output logs. Look for a local URL where the Inspector UI is being served (e.g., `http://localhost:5173` or similar). Open this URL in your web browser.
+4.  **Access UI:** Once the server is running under `mcp dev`, it will output logs. Look for a local URL where the Inspector UI is being served (e.g., `http://localhost:5173` or similar). Open this URL in your web browser.
 5.  **Connect & Test:** Inside the Inspector web UI:
-    - Click the **Connect** button. This establishes a connection between the UI and your server process running via `mcp devaf`.
+    - Click the **Connect** button. This establishes a connection between the UI and your server process running via `mcp dev`.
 
     **🧩 MCP Core Primitives:** Before testing, it's helpful to remember the core concepts MCP servers can expose:
     - **Tools:** Model-controlled functions that LLMs can invoke (like API calls, computations). These are the most common primitive.

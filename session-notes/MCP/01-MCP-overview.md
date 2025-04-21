@@ -3,6 +3,8 @@
 ## 🔍 What Is MCP (Model Context Protocol)?
 MCP is a **standardized protocol** that allows large language models (LLMs) to connect to external tools and services in a **unified, scalable, and structured** way.
 
+For example, an LLM cannot access a Gmail API by itself, but paired with a custom tool or an MCP server the LLM can do this. With tools, a different tool is required for each type of action an LLM needs to take, however MCP allows the LLM to carry out many different types of actions in a centralised, standardised way.
+
 Without MCP:
 - Every integration is bespoke.
 - APIs feel like different "languages".
@@ -38,10 +40,22 @@ LLMs like ChatGPT or Claude are great at **text prediction**, but they can't:
 | Component | Role | Description | Examples |
 |----------|------|-------------|----------|
 | **MCP Client** | Interface | The LLM-facing agent or application that initiates requests. | Claude Desktop, Cursor IDE, Custom Scripts |
-| **MCP Protocol** | Bridge | Defines how clients and servers communicate (often JSON over HTTP/SSE/STDIO). | - |
-| **MCP Server** | Translator | Receives client requests, invokes the correct tool, and returns results. | Self-hosted n8n ([03](./03-N8N-selfhost+mcp.md)/[04](./04-N8N-ServerNode.md)), Custom Python Server ([09-FastMCP-GCP-Example.md](./09-FastMCP-GCP-Example.md)) |
+| **MCP Protocol** | Bridge | Defines how clients and servers communicate (often JSON over [HTTP/SSE/STDIO](#transport-mechanisms-stdio-vs-sse)). See also [02-Transport-Mechanisms.md](./02-Transport-Mechanisms.md). | - |
+| **MCP Server** | Translator | Receives client requests, invokes the correct tool, and returns results. | Self-hosted n8n ([03](./03-N8N-selfhost+mcp.md)/[04](./04-N8N-ServerNode.md)), Custom Python Server ([09a-FastMCP-GCP-Example.md](./09a-FastMCP-GCP-Example.md)) |
 | **Service/Tool** | Functionality | The actual external capability being exposed (e.g., sending email, querying a database). | Gmail API, Database Query, Web Search |
 
+### Terminology / Detailed definition of tools:
+Sometimes it's unclear if, e.g., the Gmail API is the "tool" or if the function calling the API is the "tool". It's generally the latter:
+
+**📊 Diagram Description**
+The flow is often:
+```
+LLM → Bespoke Function (Tool) → API/DB Query/etc (Service)
+```
+**Explanation:**
+- **LLM:** The large language model initiates a request.
+- **Tool (Bespoke Function):** Acts as a wrapper or executor that can understand the LLM's intent and perform the correct task via the MCP Server.
+- **Service (API/DB):** The actual endpoint being called or queried — such as sending an email via the Gmail API or fetching data from a database.
 
 ---
 
