@@ -16,6 +16,12 @@ def add(a: int, b: int) -> int:
     """Add two numbers together"""
     return a + b
 
+@mcp.tool()
+def subtract(a: int, b: int) -> int:
+    """Subtract one number from the other"""
+    return a - b
+
+
 # --- In server.py ---
 if __name__ == "__main__":
     # Choose transport - hardcoded for this example
