@@ -1,0 +1,205 @@
+@use 'sass:color';
+@use 'sass:meta';
+
+/*!
+ * Product Foundry AI Marp Theme
+ * @theme productfoundry
+ */
+
+$color-bg: #0F0F0F;
+$color-panel: #1C1C1E;    
+$color-accent-orange: #FF9800;
+$color-accent-green: #00E676;
+$color-accent-cyan: #00BCD4;
+$color-text: #FFFFFF;
+$color-neutral: #D4CBB8;
+
+@import 'https://fonts.bunny.net/css?family=Inter:400,700|Roboto+Mono:400,700&display=swap';
+@include meta.load-css('pkg:highlight.js/styles/sunburst.css');
+
+/* Theme root for Marpit compatibility */
+:root, section {
+  width: 1280px;
+  height: 720px;
+  font-size: px;
+  padding: 70px;
+  background: #0F0F0F;
+  color: #FFFFFF;
+  font-family: 'Inter', 'Avenir Next', Avenir, 'Trebuchet MS', 'Segoe UI', sans-serif;
+  line-height: 1.35;
+  letter-spacing: 1.1px;
+  word-wrap: break-word;
+  background-image: linear-gradient(135deg, rgba(0,230,118,0.04), rgba(0,188,212,0.04) 50%, rgba(255,152,0,0.03) 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Avenir Next', Avenir, sans-serif;
+  font-weight: 700;
+  margin: 0.5em 0 0;
+}
+
+h1 {
+  font-size: 2.2em;
+  color: #00BCD4;
+  text-shadow: 0 0 12px #00BCD4, 0 0 2px #000;
+}
+
+h2 {
+  font-size: 1.7em;
+  color: #FF9800;
+  text-shadow: 0 0 8px #FF9800, 0 0 2px #000;
+}
+
+h3, h4, h5, h6 {
+  color: #00E676;
+  text-shadow: 0 0 8px #00E676, 0 0 2px #000;
+}
+
+p, blockquote {
+  margin: 1em 0 0;
+}
+
+blockquote {
+  border-left: 6px solid #FF9800;
+  background: rgba(255,152,0,0.07);
+  padding: 1em 2em;
+  font-style: italic;
+  color: #D4CBB8;
+}
+
+ul, ol {
+  margin-left: 1.5em;
+  > li {
+    margin: 0.3em 0 0;
+    > p {
+      margin: 0.6em 0 0;
+    }
+  }
+}
+
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9em;
+  background: #23272e;
+  color: #00E676;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+}
+
+pre {
+  background: #181C1F;
+  color: #00BCD4;
+  border-radius: 8px;
+  padding: 1em;
+  font-size: 0.8em;
+  overflow-x: auto;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1em 0 0;
+  width: 90%;
+  th, td {
+    padding: 0.3em 0.7em;
+    border: 1px solid #00BCD4;
+    background: rgba(0,188,212,0.07);
+    color: #FFFFFF;
+  }
+  thead th {
+    background: #00BCD4;
+    color: #0F0F0F;
+  }
+}
+
+img, .img {
+  border-radius: 12px;
+  box-shadow: 0 0 24px 0 rgba(0,230,118,0.12), 0 0 4px 0 #000;
+  margin: 1em auto;
+  display: block;
+}
+
+section.lead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1, h2, h3 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+section.code {
+  background: #181C1F;
+  color: #00BCD4;
+}
+
+section.quote {
+  background: #1C1C1E;
+  color: #D4CBB8;
+  font-style: italic;
+  border-left: 8px solid #FF9800;
+}
+
+section.diagram {
+  background: #0F0F0F;
+  color: #00E676;
+  font-family: 'Roboto Mono', monospace;
+}
+
+section.title {
+  background: linear-gradient(135deg, #0F0F0F 60%, #00BCD4 100%);
+  color: #FFFFFF;
+  h1 {
+    color: #fff;
+    text-shadow: 0 0 24px #00BCD4;
+  }
+}
+
+a, mark {
+  color: #FF9800;
+}
+
+footer {
+  color: #D4CBB8;
+  font-size: 0.7em;
+  text-align: right;
+  padding: 0.5em 2em;
+}
+
+section::after {
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #fff;
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  font-size: 0.8em;
+  color: #00BCD4;
+}
+
+header,
+footer {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  height: 20px;
+}
+
+header {
+  top: 30px;
+}
+
+footer {
+  bottom: 30px;
+}
+
+@media (max-width: 900px) {
+  section, :root {
+    font-size: 22px;
+    padding: 20px;
+  }
+}
