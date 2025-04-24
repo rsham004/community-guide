@@ -1,115 +1,241 @@
-@use 'sass:color';
-@use 'sass:meta';
-
+@charset "UTF-8";
 /*!
  * Product Foundry AI Marp Theme
  * @theme productfoundry
  */
 
-$color-bg: #0F0F0F;
-$color-panel: #1C1C1E;    
-$color-accent-orange: #FF9800;
-$color-accent-green: #00E676;
-$color-accent-cyan: #00BCD4;
-$color-text: #FFFFFF;
-$color-neutral: #D4CBB8;
+/* Font imports */
+@import url('https://fonts.bunny.net/css?family=Inter:400,700|Roboto+Mono:400,700&display=swap');
 
-@import 'https://fonts.bunny.net/css?family=Inter:400,700|Roboto+Mono:400,700&display=swap';
-@include meta.load-css('pkg:highlight.js/styles/sunburst.css');
+/* Color variables */
+:root {
+  --pf-bg: #0F0F0F;
+  --pf-panel: #1C1C1E;
+  --pf-accent-orange: #FF9800;
+  --pf-accent-green: #00E676;
+  --pf-accent-cyan: #00BCD4;
+  --pf-text: #FFFFFF;
+  --pf-neutral: #D4CBB8;
+}
 
-/* Theme root for Marpit compatibility */
-:root, section {
-  width: 1280px;
-  height: 720px;
-  font-size: px;
-  padding: 70px;
-  background: #0F0F0F;
-  color: #FFFFFF;
+/* Code highlighting (structure from Dracula) */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: var(--pf-bg);
+  color: var(--pf-accent-cyan);
+}
+.hljs,
+.hljs-subst,
+.hljs-variable,
+.hljs-template-variable {
+  color: var(--pf-text);
+}
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: var(--pf-neutral);
+}
+.hljs-meta .hljs-doctag,
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link,
+.hljs-class {
+  color: var(--pf-accent-cyan);
+}
+.hljs-title {
+  color: var(--pf-accent-green);
+}
+.hljs-params {
+  color: var(--pf-accent-orange);
+}
+.hljs-keyword {
+  color: var(--pf-accent-orange);
+}
+.hljs-literal,
+.hljs-number {
+  color: var(--pf-accent-cyan);
+}
+.hljs-regexp {
+  color: var(--pf-accent-orange);
+}
+.hljs-string,
+.hljs-name,
+.hljs-type,
+.hljs-attr,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-template-tag {
+  color: var(--pf-accent-green);
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-params,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+/* Slide background and base styles */
+section, :root {
+  font-size: 35px;
   font-family: 'Inter', 'Avenir Next', Avenir, 'Trebuchet MS', 'Segoe UI', sans-serif;
   line-height: 1.35;
   letter-spacing: 1.1px;
   word-wrap: break-word;
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  padding: 70px;
   background-image: linear-gradient(135deg, rgba(0,230,118,0.04), rgba(0,188,212,0.04) 50%, rgba(255,152,0,0.03) 100%);
 }
 
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0 0 0;
   font-family: 'Inter', 'Avenir Next', Avenir, sans-serif;
   font-weight: 700;
-  margin: 0.5em 0 0;
 }
-
-h1 {
+h1, h1 strong {
   font-size: 2.2em;
-  color: #00BCD4;
-  text-shadow: 0 0 12px #00BCD4, 0 0 2px #000;
+  color: var(--pf-accent-cyan);
+  text-shadow: 0 0 12px var(--pf-accent-cyan), 0 0 2px #000;
 }
-
-h2 {
+h2, h2 strong {
   font-size: 1.7em;
-  color: #FF9800;
-  text-shadow: 0 0 8px #FF9800, 0 0 2px #000;
+  color: var(--pf-accent-orange);
+  text-shadow: 0 0 8px var(--pf-accent-orange), 0 0 2px #000;
 }
-
-h3, h4, h5, h6 {
-  color: #00E676;
-  text-shadow: 0 0 8px #00E676, 0 0 2px #000;
+h3, h3 strong,
+h4, h4 strong,
+h5, h5 strong,
+h6, h6 strong {
+  color: var(--pf-accent-green);
+  text-shadow: 0 0 8px var(--pf-accent-green), 0 0 2px #000;
 }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: 1em; }
+h6 { font-size: 0.9em; }
 
-p, blockquote {
-  margin: 1em 0 0;
-}
-
+p,
 blockquote {
-  border-left: 6px solid #FF9800;
-  background: rgba(255,152,0,0.07);
-  padding: 1em 2em;
-  font-style: italic;
-  color: #D4CBB8;
+  margin: 1em 0 0 0;
 }
 
-ul, ol {
-  margin-left: 1.5em;
-  > li {
-    margin: 0.3em 0 0;
-    > p {
-      margin: 0.6em 0 0;
-    }
-  }
+ul > li,
+ol > li {
+  margin: 0.3em 0 0 0;
+  color: var(--pf-accent-cyan);
+}
+ul > li > p,
+ol > li > p {
+  margin: 0.6em 0 0 0;
 }
 
 code {
+  display: inline-block;
   font-family: 'Roboto Mono', monospace;
   font-size: 0.9em;
+  letter-spacing: 0;
+  margin: -0.1em 0.15em;
+  padding: 0.1em 0.2em;
+  vertical-align: baseline;
+  color: var(--pf-accent-green);
   background: #23272e;
-  color: #00E676;
   border-radius: 4px;
-  padding: 0.15em 0.4em;
 }
 
 pre {
+  display: block;
+  margin: 1em 0 0 0;
+  min-height: 1em;
+  overflow: visible;
   background: #181C1F;
-  color: #00BCD4;
+  color: var(--pf-accent-cyan);
   border-radius: 8px;
   padding: 1em;
   font-size: 0.8em;
   overflow-x: auto;
 }
+pre code {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 100%;
+  padding: 0.5em;
+  font-size: 0.7em;
+  background: #181C1F;
+}
+pre code svg[data-marp-fitting=svg] {
+  max-height: calc(580px - 1em);
+}
+
+blockquote {
+  margin: 1em 0 0 0;
+  padding: 0 1em;
+  position: relative;
+  color: var(--pf-neutral);
+  border-left: 6px solid var(--pf-accent-orange);
+  background: rgba(255,152,0,0.07);
+  font-style: italic;
+}
+blockquote::before,
+blockquote::after {
+  content: "“";
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  position: absolute;
+  color: var(--pf-accent-green);
+}
+blockquote::before {
+  top: 0;
+  left: 0;
+}
+blockquote::after {
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+blockquote > *:first-child {
+  margin-top: 0;
+}
+
+mark {
+  background: transparent;
+  color: var(--pf-accent-orange);
+}
 
 table {
   border-spacing: 0;
   border-collapse: collapse;
-  margin: 1em 0 0;
+  margin: 1em 0 0 0;
   width: 90%;
-  th, td {
-    padding: 0.3em 0.7em;
-    border: 1px solid #00BCD4;
-    background: rgba(0,188,212,0.07);
-    color: #FFFFFF;
-  }
-  thead th {
-    background: #00BCD4;
-    color: #0F0F0F;
-  }
+}
+table th,
+table td {
+  padding: 0.3em 0.7em;
+  border: 1px solid var(--pf-accent-cyan);
+  background: rgba(0,188,212,0.07);
+  color: var(--pf-text);
+}
+table thead th {
+  background: var(--pf-accent-cyan);
+  color: var(--pf-bg);
+}
+table tbody > tr:nth-child(even) td,
+table tbody > tr:nth-child(even) th {
+  background: var(--pf-panel);
 }
 
 img, .img {
@@ -124,47 +250,47 @@ section.lead {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  h1, h2, h3 {
-    text-align: center;
-  }
-  p {
-    text-align: center;
-  }
+}
+section.lead h1,
+section.lead h2,
+section.lead h3,
+section.lead p {
+  text-align: center;
 }
 
 section.code {
   background: #181C1F;
-  color: #00BCD4;
+  color: var(--pf-accent-cyan);
 }
 
 section.quote {
-  background: #1C1C1E;
-  color: #D4CBB8;
+  background: var(--pf-panel);
+  color: var(--pf-neutral);
   font-style: italic;
-  border-left: 8px solid #FF9800;
+  border-left: 8px solid var(--pf-accent-orange);
 }
 
 section.diagram {
-  background: #0F0F0F;
-  color: #00E676;
+  background: var(--pf-bg);
+  color: var(--pf-accent-green);
   font-family: 'Roboto Mono', monospace;
 }
 
 section.title {
-  background: linear-gradient(135deg, #0F0F0F 60%, #00BCD4 100%);
-  color: #FFFFFF;
-  h1 {
-    color: #fff;
-    text-shadow: 0 0 24px #00BCD4;
-  }
+  background: linear-gradient(135deg, var(--pf-bg) 60%, var(--pf-accent-cyan) 100%);
+  color: var(--pf-text);
+}
+section.title h1 {
+  color: #fff;
+  text-shadow: 0 0 24px var(--pf-accent-cyan);
 }
 
 a, mark {
-  color: #FF9800;
+  color: var(--pf-accent-orange);
 }
 
 footer {
-  color: #D4CBB8;
+  color: var(--pf-neutral);
   font-size: 0.7em;
   text-align: right;
   padding: 0.5em 2em;
@@ -178,7 +304,7 @@ section::after {
   bottom: 20px;
   right: 40px;
   font-size: 0.8em;
-  color: #00BCD4;
+  color: var(--pf-accent-cyan);
 }
 
 header,
