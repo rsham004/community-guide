@@ -18,6 +18,7 @@ Docker is a platform for developing, shipping, and running applications inside *
     *   Go to [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
     *   Download the installer for your operating system.
     *   **Windows:** Requires WSL 2 (Windows Subsystem for Linux 2). The Docker Desktop installer will usually prompt you to install/enable it if needed. Follow the on-screen instructions, which may involve enabling virtualization in your BIOS/UEFI and installing the WSL kernel update. A system restart is often required.
+    *   Note - see Verification step below if you have issues you may need an earlier release of Docker.
     *   **macOS:** Requires macOS version 11 (Big Sur) or newer. Follow the standard application installation process (drag to Applications folder).
     *   **Linux:** Docker Engine is typically installed via the distribution's package manager. Follow the official instructions for your specific distro: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) (e.g., for Ubuntu, Debian, CentOS, Fedora). You might also need to add your user to the `docker` group: `sudo usermod -aG docker $USER` (log out and back in afterwards).
 
@@ -32,6 +33,7 @@ Docker is a platform for developing, shipping, and running applications inside *
         docker run hello-world # Downloads and runs a simple test image
         ```
     *   If the `hello-world` container runs successfully, Docker is installed correctly.
+    *   If it does not, you may need an earlier release of docker. Docker version 20.10.20, build 9fdeb9c was found to work in an instance where the verification was unsuccessful.
 
 ## 💡 Getting Started
 
