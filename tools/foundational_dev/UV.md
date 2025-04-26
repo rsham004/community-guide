@@ -28,6 +28,10 @@
     ```powershell
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
     ```
+    
+    **Install `uv` for all supported operating systems**
+    https://docs.astral.sh/uv/getting-started/installation/
+
 
 4.  **Create and Clone Your Repo:**
     *(Requires Git and VS Code installed and configured as per the guides above)*
