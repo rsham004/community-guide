@@ -17,6 +17,9 @@
 
 ## 🛠️ Step-by-Step Setup for a New Project Using `uv`
 
+It may be useful to follow the youtube video side by side to get a good grasp on the overall process for working on the project.
+Link: https://www.youtube.com/watch?v=5W6Wi6kxmC8&t=2564s
+
 ### Prerequisites
 
 1.  **Install Git for Windows:** See the [Git Installation & Configuration Guide](./Git-for-windows.md).
