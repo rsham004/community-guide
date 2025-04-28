@@ -16,6 +16,6 @@ Make sure to review the created doc (in the docs folder (you are running the AI 
 <code>Using 03_solution_architect please create a file /docs/SA.md this is a backend application so we don't need anything
 from the front end.</code>
 Make sure to review the created doc (in the docs folder (you are running the AI not the other way around)
-- SA document creation prompt:
+- DA document creation prompt:
 <code>Okay great. Now create using 04_data_architect.md a document /docs/DA.md which outlines the data architecture.</code>
 Make sure to review the created doc (in the docs folder (you are running the AI not the other way around)
