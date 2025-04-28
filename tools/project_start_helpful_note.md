@@ -1,3 +1,7 @@
+## These are specific to the stockmarket API video by Dave 
+
+These may or may not apply for other projects. Please use your judgement.
+
 ### Pre-requisites:
 - Create project folder in VSCode
 - Create docs folder within projects folder
@@ -19,3 +23,9 @@ Make sure to review the created doc (in the docs folder (you are running the AI 
 - DA document creation prompt:
 <code>Okay great. Now create using 04_data_architect.md a document /docs/DA.md which outlines the data architecture.</code>
 Make sure to review the created doc (in the docs folder (you are running the AI not the other way around)
+
+### General fixes (To be structured into a suitable place later)
+
+- To display Mermaid diagrams in .md (markdown) files such as data architecture install extension "Markdown Preview Mermaid Support" in VScode (CTRL+SHIFT+X for windows env and then search for it)
+- uv add SQlite
+- uv add prisma
